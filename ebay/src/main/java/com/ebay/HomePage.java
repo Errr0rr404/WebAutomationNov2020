@@ -8,7 +8,7 @@ public class HomePage {
     @FindBy(id = "gh-ac")
     private WebElement searchBar;
 
-    public void typeOnSearchBar(){
+    public void typeOnSearchBar() {
         searchBar.sendKeys("Java Books");
     }
 
