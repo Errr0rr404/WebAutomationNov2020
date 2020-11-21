@@ -1,9 +1,11 @@
 package com.ebay;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class HomePage {
+    private static Logger LOGGER = Logger.getLogger(HomePage.class);
 
     @FindBy(id = "gh-ac")
     private WebElement searchBar;
@@ -15,6 +17,7 @@ public class HomePage {
     private WebElement signInBtn;
 
     public void typeOnSearchBar() {
+        LOGGER.info("sending keys : Java Books");
         searchBar.sendKeys("Java Books");
     }
 

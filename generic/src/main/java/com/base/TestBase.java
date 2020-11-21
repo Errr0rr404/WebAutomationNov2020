@@ -231,6 +231,7 @@ public class TestBase {
     public void cleanUp() {
         driver.close();
         driver.quit();
+        LOGGER.info("driver closed");
     }
 
 }
