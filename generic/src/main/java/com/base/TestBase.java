@@ -68,6 +68,8 @@ public class TestBase {
     }
 
     /**
+     * This method will create WebDriver Objet based on the browser and platform provided
+     *
      * @param browser  the browser you want to execute your test case
      * @param platform in the operating system you want to execute your test case
      * @return WebDriver Object
@@ -110,11 +112,21 @@ public class TestBase {
         return driver;
     }
 
+    /**
+     * this method will navigate the browser to provided URL
+     *
+     * @param url
+     */
     public static void navigateToURL(String url) {
         driver.get(url);
         LOGGER.info("navigated to the url : " + url);
     }
 
+    /**
+     * This method will wait for X seconds based on the param provided
+     *
+     * @param seconds
+     */
     public static void sleepFor(int seconds) {
         try {
             Thread.sleep(seconds * 1000);
@@ -123,12 +135,18 @@ public class TestBase {
         }
     }
 
+    /**
+     * This method will close the instance of the WebDriver
+     */
     public static void closeDriver() {
         driver.quit();
         LOGGER.info("closed the instance of the driver");
     }
 
 
+    /**
+     * This method will navigate back from the current page to previous page
+     */
     public static void navigateBack() {
         driver.navigate().back();
     }
@@ -140,12 +158,12 @@ public class TestBase {
 
     //screenshot
     public static void captureScreenshot(WebDriver driver, String screenshotName) {
-        DateFormat df = new SimpleDateFormat("(MM.dd.yyyy-HH:mma)");
+        DateFormat df = new SimpleDateFormat("HH_mm_ss");
         Date date = new Date();
         df.format(date);
         File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         try {
-            FileUtils.copyFile(file, new File(System.getProperty("user.dir") + "/screenshots/" + screenshotName + " " + df.format(date) + ".png"));
+            FileUtils.copyFile(file, new File(System.getProperty("user.dir") + "/screenshots/" + screenshotName + " " + df.format(date) + ".jpg"));
             System.out.println("Screenshot captured");
         } catch (Exception e) {
             System.out.println("Exception while taking screenshot " + e.getMessage());
