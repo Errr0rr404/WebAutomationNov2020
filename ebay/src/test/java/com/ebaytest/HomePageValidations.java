@@ -13,14 +13,14 @@ public class HomePageValidations extends TestBase {
         homePage.typeOnSearchBar();
     }
 
-    @Test(enabled = false)
+    @Test
     public void validateUserBeingAbleToSearchForAnItem() {
         HomePage homePage = PageFactory.initElements(driver, HomePage.class);
         homePage.typeOnSearchBar();
         homePage.clickOnSearchButton();
     }
 
-    @Test(enabled = false)
+    @Test
     public void validateUserBeingAbleToClickOnSignInButton() {
         HomePage homePage = PageFactory.initElements(driver, HomePage.class);
         homePage.clickOnSignInButton();
