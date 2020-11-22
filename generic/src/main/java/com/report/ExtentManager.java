@@ -18,7 +18,7 @@ public class ExtentManager {
             Reporter.log("Extent Report Directory" + resultDirectory, true);
             extent.addSystemInfo("Host Name", "PNT").addSystemInfo("Environment",
                     "QA").addSystemInfo("User Name", "Automation").addSystemInfo("URL", "https://www.ebay.com");
-            extent.loadConfig(new File(System.getProperty("user.dir") + "/report-config.xml"));
+            extent.loadConfig(new File("../generic/src/main/resources/report-config.xml"));
         }
         return extent;
     }
