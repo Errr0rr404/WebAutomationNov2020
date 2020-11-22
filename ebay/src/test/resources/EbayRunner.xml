@@ -3,7 +3,7 @@
 
 <suite name="Selenium Test Suite" parallel="false">
 
-    <parameter name="browser" value="Chrome"/>
+    <parameter name="browser" value="firefox"/>
     <parameter name="url" value="https://www.ebay.com"/>
 
     <!--if you gonna use for cloud & mac you can use "OS X",

@@ -17,6 +17,9 @@ public class HomePage {
     @FindBy(linkText = "Sign in")
     private WebElement signInBtn;
 
+    @FindBy(linkText = "register")
+    private WebElement registerBtn;
+
     public void typeOnSearchBar(String data) {
         searchBar.sendKeys(data);
         ExtentTestManager.log("Typed on search bar : " + data);
@@ -32,6 +35,11 @@ public class HomePage {
     public void clickOnSignInButton() {
         signInBtn.click();
         ExtentTestManager.log("Clicked on Sign In Button");
+    }
+
+    public void clickOnRegisterButton() {
+        registerBtn.click();
+        ExtentTestManager.log("Clicked on Register Button");
     }
 
 }
