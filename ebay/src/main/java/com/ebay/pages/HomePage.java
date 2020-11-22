@@ -1,5 +1,6 @@
-package com.ebay;
+package com.ebay.pages;
 
+import com.report.ExtentTestManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,20 +14,24 @@ public class HomePage {
     @FindBy(id = "gh-btn")
     private WebElement searchBtn;
 
-    @FindBy(linkText = "Sig in")
+    @FindBy(linkText = "Sign in")
     private WebElement signInBtn;
 
-    public void typeOnSearchBar() {
-        LOGGER.info("sending keys : Java Books");
-        searchBar.sendKeys("Java Books");
+    public void typeOnSearchBar(String data) {
+        searchBar.sendKeys(data);
+        ExtentTestManager.log("Typed on search bar : " + data);
+
     }
 
     public void clickOnSearchButton() {
         searchBtn.click();
+        ExtentTestManager.log("Clicked on Search Button");
+
     }
 
     public void clickOnSignInButton() {
         signInBtn.click();
+        ExtentTestManager.log("Clicked on Sign In Button");
     }
 
 }
